@@ -1,31 +1,42 @@
 {
   "name": "rubberducky",
   "displayName": "RubberDucky",
-  "description": "",
+  "description": "A simple chat bot for developers.",
   "version": "0.0.1",
+  "publisher": "bargeaaron",
   "engines": {
     "vscode": "^1.103.0"
   },
   "categories": [
     "Other"
   ],
+  "license": "MIT",
   "activationEvents": [],
   "main": "./out/extension.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AaronTheNerd/rubberducky.git"
+  },
   "contributes": {
-    "commands": [
+    "chatParticipants": [
       {
-        "command": "rubberducky.helloWorld",
-        "title": "Hello World"
+        "id": "rubber-ducky",
+        "name": "ducky",
+        "fullName": "Robert Duckington",
+        "description": "Quack!",
+        "isSticky": true
       }
     ]
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
-    "compile": "tsc -p ./",
+    "compile": "tsc -p ./ && npm run copy-assets",
     "watch": "tsc -watch -p ./",
     "pretest": "npm run compile && npm run lint",
     "lint": "eslint src",
-    "test": "vscode-test"
+    "test": "vscode-test",
+    "clean": "rm -rf dist out",
+    "copy-assets": "cp -r assets out/assets"
   },
   "devDependencies": {
     "@types/vscode": "^1.103.0",
