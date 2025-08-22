@@ -1,6 +1,6 @@
 {
-  "name": "rubberducky",
-  "displayName": "RubberDucky",
+  "name": "rubber-ducky-bot",
+  "displayName": "Rubber Ducky",
   "description": "A simple chat bot for developers.",
   "version": "0.0.1",
   "publisher": "bargeaaron",
